@@ -1,0 +1,8 @@
+ls - list files in directory
+cd - change directories
+cd .. - go up a directory (../../..)
+git status - check if anyone made changes to the repo
+git pull - updates your local repo
+git add . - adds files to repo
+git commit -m "words" - commits
+git push - upload local repo
