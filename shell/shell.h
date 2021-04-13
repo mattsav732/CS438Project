@@ -25,4 +25,11 @@ extern struct builtin_s builtins[];
 /* and their count */
 extern int builtins_count;
 
+struct word_s
+{
+    char  *data;
+    int    len;
+    struct word_s *next;
+};
+
 #endif
