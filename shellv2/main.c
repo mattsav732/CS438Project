@@ -63,6 +63,31 @@ int lsh_help(char **args)
 {
   int i;
   printf("Stephen Brennan's LSH\n");
+  printf("           `-:+osyhhhhyyoo/:-.``    -::- \n" 
+ "`  `  ``:+syyhdddmmddddddddhhhyo/.` `` \n"  
+"`  `  ./ssyhddmmmmmmmmmmmmmdddddhhy/` \n"  
+ "    :ssyhdddmmmmdhhhhdddmmmmddddhy.    \n"
+ "`  `syhhdddhso+++ooossssyyhdddhhs.`  ` \n"
+"`  ` :yhhhyo+shy/..----:/+ooohhyo.  `  \n" 
+ "     ./syoymMN:.:+ss/::-::/oyo-       \n" 
+ "`  `  ``.shmmy.-/ossy//+syso:  `  `  ` \n"
+"`  `  `  +dyyd:.--://-.:oysoys`  `  `  \n" 
+ "       /ddhdh---:/+++-:oooosd`       \n"  
+ "`  ` .ymNNNdo:-:++/:/+ssso+sm` `  `  ` \n"
+"`  ``omNNNNNm+//+o::/+ossoo+mm-  `  `  \n "
+ "   ommmmmmmdo++++/:/+ssoosoNNy`    \n"    
+ "`  oNNNNNNNNhooo++++oosyyyyNNNo`  `  ` \n"
+"`  `.hNMMMMMMdyysssosyhyssyhdNNm``  `   \n"
+ "     `:yNNMmssyysysyysossyyymm/     \n"   
+ "`  ` `.-oo++/:::/+ossosyyyyhy` ````  ` \n"
+" _______                                     _ \n"
+"(_______)                                   | | \n"
+" _____ ____  ____ ____ _   _  ____  ____  _ | |\n"
+"|  ___) _  |/ ___) _  | | | |/ _  |/ _  |/ || |\n"
+"| |  ( ( | | |  | | | | |_| ( ( | ( ( | ( (_| |\n"
+"|_|  \\_||_|_|    \\_|| |\\____|\\_||_|\\_||_|\\____|\n"
+ "                    |_|                        \n "                     
+ );
   printf("Type program names and arguments, and hit enter.\n");
   printf("The following are built in:\n");
 
@@ -91,6 +116,7 @@ int lsh_exit(char **args)
  */
 int lsh_launch(char **args)
 {
+  
   pid_t pid;
   int status;
 
@@ -242,9 +268,11 @@ void lsh_loop(void)
   char *line;
   char **args;
   int status;
-  
+ 
+   
   do {
     printf("$ ");
+
     line = lsh_read_line();
     args = lsh_split_line(line);
     status = lsh_execute(args);
@@ -264,7 +292,7 @@ void lsh_loop(void)
 int main(int argc, char **argv)
 {
   // Load config files, if any.
-
+     
   // Run command loop.
   lsh_loop();
 
