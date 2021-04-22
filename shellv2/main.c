@@ -14,9 +14,13 @@ int fq_exit(char **args);
 
 //Bullitin commands
 char *builtin_str[] = {
-  "cd",
+  "cd - change directory, 'cd name' or 'cd ..' to move up one level",
   "help",
-  "exit"
+  "exit - close the shell",
+  "ls - list contents of current directory",
+  "touch/mkdir - make a new file/directory, 'touch name.txt' or 'mkdir name'",
+  "top - list all current processes",
+  "rm/rmdir - remove a file/directory, 'rm name'"
 };
 
 int (*builtin_func[]) (char **) = {
@@ -70,14 +74,15 @@ int fq_help(char **args)
 "|_|  \\_||_|_|    \\_|| |\\____|\\_||_|\\_||_|\\____|\n"
  "                    |_|                        \n "                     
  );
-  printf("Type program names and arguments, and hit enter.\n");
-  printf("The following are built in:\n");
+
+  printf("The following commands can be called:\n");
 
   for (i = 0; i < fq_num_builtins(); i++) {
     printf("  %s\n", builtin_str[i]);
   }
 
-  printf("Use the man command for information on other programs.\n");
+  printf("Exit the shell by typing 'exit' or ctrl+c\n");
+
   return 1;
 }
 
